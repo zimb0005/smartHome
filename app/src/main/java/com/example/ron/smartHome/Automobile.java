@@ -17,7 +17,7 @@ public class Automobile extends AppCompatActivity {
         Log.i(ACTIVITY_NAME,"In onCreate()");
         setContentView(R.layout.activity_automobile);
     }
-
+//ron is here
     @Override
     protected void onResume(){
         super.onResume();
