@@ -5,4 +5,8 @@
     <string name="livingRoom">Living Room</string>
     <string name="house">House Settings</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fuel_guage">FuelGuage</string>
+
 </resources>

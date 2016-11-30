@@ -11,7 +11,7 @@ public class Kitchen extends AppCompatActivity {
 
     protected static final String ACTIVITY_NAME = "Kitchen";
 
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

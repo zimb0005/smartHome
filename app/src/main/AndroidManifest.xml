@@ -8,16 +8,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.ron.smartHome.LivingRoom">
+        <activity android:name=".LivingRoom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.ron.smartHome.Kitchen" />
-        <activity android:name="com.example.ron.smartHome.HouseSettings" />
-        <activity android:name="com.example.ron.smartHome.Automobile" />
+        <activity android:name=".Kitchen" />
+        <activity android:name=".HouseSettings" />
+        <activity android:name=".Automobile" />
+        <activity
+            android:name=".FuelGuage"
+            android:label="@string/title_activity_fuel_guage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Drive" />
+        <activity android:name=".Radio"></activity>
     </application>
 
 </manifest>

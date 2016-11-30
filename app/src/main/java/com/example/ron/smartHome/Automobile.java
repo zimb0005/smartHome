@@ -1,13 +1,18 @@
 package com.example.ron.smartHome;
-//In Rons Branch
+
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
-public class Automobile extends AppCompatActivity {
+public class Automobile extends AppCompatActivity  {
+
 
     protected static final String ACTIVITY_NAME = "Automobile";
 
@@ -16,8 +21,11 @@ public class Automobile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.i(ACTIVITY_NAME,"In onCreate()");
         setContentView(R.layout.activity_automobile);
+
+
+
     }
-//ron is here
+
     @Override
     protected void onResume(){
         super.onResume();
@@ -55,6 +63,7 @@ public class Automobile extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu,menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
