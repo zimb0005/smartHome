@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.text.NumberFormat;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -52,6 +53,8 @@ public class CarList extends Fragment {
                     case 1: fuelGuage();
                     break;
                     case 2: radio();
+                    break;
+                    case 3: gps();
                     break;
                     case 6: drive();
                     break;
@@ -129,7 +132,7 @@ public class CarList extends Fragment {
 
             public void fuelGuage(){
 
-                Intent intent = new Intent (getActivity(),FuelGuage.class);
+                Intent intent = new Intent (getActivity(),Fuel.class);
                 ((Automobile)getActivity()).startActivity(intent);
 
             }
@@ -141,6 +144,11 @@ public class CarList extends Fragment {
 
             public void radio(){
                 Intent intent = new Intent (getActivity(),Radio.class);
+                ((Automobile)getActivity()).startActivity(intent);
+            }
+            public void gps(){
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("google.navigation:q="));
                 ((Automobile)getActivity()).startActivity(intent);
             }
 

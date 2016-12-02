@@ -1,27 +1,21 @@
 package com.example.ron.smartHome;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-
-public class FuelGuage extends AppCompatActivity {
-
-
+public class Fuel extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fuel_guage);
+        setContentView(R.layout.activity_fuel);
+
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("KmValue",sharedPreferences.getString("KmValue","225"));
@@ -44,5 +38,4 @@ public class FuelGuage extends AppCompatActivity {
             }
         });
     }
-
 }
