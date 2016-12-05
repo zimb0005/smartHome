@@ -9,31 +9,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Drive">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Drive"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go!"
         android:id="@+id/buttonGo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="170dp"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/editTextDrive"
+        android:layout_alignEnd="@+id/editTextDrive" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextDrive"
-        android:layout_marginTop="69dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/textViewDriveAmount"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +30,33 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Enter Km to Drive"
         android:id="@+id/textViewDriveAmount"
+        android:layout_marginTop="100dp" /> />
+    <ImageView
+        android:src="@mipmap/ic_car"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#FFFFBB33"
+        android:id="@+id/imageView3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView2"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView" />
+        android:layout_alignEnd="@+id/textViewDriveAmount"
+        android:layout_below="@+id/buttonGo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Drive Log"
+        android:id="@+id/textView"
+        android:layout_alignBottom="@+id/buttonGo"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

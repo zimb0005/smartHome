@@ -9,21 +9,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ron.smartHome.Fuel">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Fuel"
-        android:id="@+id/textViewFuel"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:src="@mipmap/ic_fuel"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#FFFFBB33"
+        android:contentDescription="@string/app_name"
+        android:id="@+id/imageView" />
+
 
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/progressBar"
-        android:layout_below="@+id/textViewFuel"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="41dp"
         android:progress="25"
@@ -60,9 +61,9 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/textViewKmValue"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/textViewFull"
-        android:layout_alignStart="@+id/textViewFuel" />
+        android:layout_alignTop="@+id/fillButton"
+        android:layout_toEndOf="@+id/textView3"
+        android:layout_marginStart="42dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,14 +71,14 @@
         android:text="Km"
         android:id="@+id/textViewKm"
         android:layout_alignTop="@+id/textViewKmValue"
-        android:layout_toEndOf="@+id/textViewFuel" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You can drive"
         android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textViewKmValue"
-        android:layout_toEndOf="@+id/textViewEmpty" />
+        android:layout_alignTop="@+id/textViewKm"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

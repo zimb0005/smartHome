@@ -124,4 +124,14 @@
         android:layout_above="@+id/buttonPreset3"
         android:layout_toEndOf="@+id/textViewTuner" />
 
+    <ImageView
+        android:src="@mipmap/ic_radio"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#FFFFBB33"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

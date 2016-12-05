@@ -18,12 +18,11 @@
         <activity android:name=".Kitchen" />
         <activity android:name=".HouseSettings" />
         <activity android:name=".Automobile" />
-        <activity
-            android:name=".FuelGuage"
-            android:label="@string/title_activity_fuel_guage"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Drive" />
-        <activity android:name=".Radio"></activity>
+        <activity android:name=".Radio" />
+        <activity android:name=".GPS" />
+        <activity android:name=".Fuel" />
+        <activity android:name=".Temp"></activity>
     </application>
 
 </manifest>
