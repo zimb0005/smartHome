@@ -1,10 +1,13 @@
 package com.example.ron.smartHome;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.icu.text.NumberFormat;
 import android.net.Uri;
@@ -31,13 +34,38 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+/**
+ * This class is a fragement used to diplay a listview of the available functions in the Automobile section
+ * @author ron zimbalatti
+ * @date dec 1 2016
+ */
+public class CarList extends Fragment {
 
-public class CarList extends Fragment implements View.OnClickListener {
-
-    ArrayList list = new ArrayList(Arrays.asList("Temp","Fuel","Radio","GPS","Lights","Odometer","Drive"));
+    //String drive = getString(R.string.Drive) ;
+    /**
+     * arraylist represents the functions of the automobile app
+     */
+    ArrayList list = new ArrayList(Arrays.asList("Temp","Gas","Radio","GPS","Drive","Odometer"));
+    /**
+     * button to add a function to listview
+     */
     Button add;
+    /**
+     * button to remove a function from listview
+     */
     Button remove;
+    /**
+     * TextView used to store input for adding or removing
+     */
     TextView addText;
+    /**
+     * database instance
+     */
+    SQLiteDatabase database;
+    /**
+     * databaseHelper instance
+     */
+    OptionDataBaseHelper db;
 
 
     @Override
@@ -45,22 +73,47 @@ public class CarList extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        db = new OptionDataBaseHelper(getActivity());
+        database = db.getWritableDatabase();
 
+        String query = "SELECT * FROM option WHERE 1;";
+
+        Cursor c = database.rawQuery(query,null);
+
+        c.moveToFirst();
+
+        while(!c.isAfterLast()){
+            if(c.getString(c.getColumnIndex(DriveDataBaseHelper.KEY_MESSAGE))!= null) {
+               list.add(c.getString(c.getColumnIndex(DriveDataBaseHelper.KEY_MESSAGE)));
+            }
+            c.moveToNext();
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,final Bundle savedInstanceState) {
-
-
         View view = inflater.inflate(R.layout.fragment_car_list, container, false);
         add = (Button)view.findViewById(R.id.buttonAdd);
-        add.setOnClickListener(this);
+        add.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                addText = (TextView)getActivity().findViewById(R.id.editTextList);
+                list.add(addText.getText().toString());
+                ContentValues value = new ContentValues();
+                value.put(db.KEY_MESSAGE,addText.getText().toString());
+                database.insert(db.TABLE_NAME,null,value);
+
+            }
+        });
         remove = (Button)view.findViewById(R.id.buttonRemove);
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addText = (TextView)getActivity().findViewById(R.id.editTextList);
                 list.remove(addText.getText().toString());
+                database.delete("option","MESSAGE = '"+addText.getText().toString()+"';",null);
             }
         });
 
@@ -84,16 +137,30 @@ public class CarList extends Fragment implements View.OnClickListener {
                         break;
                     case 3: gps();
                         break;
-                    case 6: drive();
+                    case 4: drive();
+                        break;
+                    case 5: odometer();
                         break;
                 }
                 return true;
             }
 
+            public void odometer(){
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
+                builder2.setTitle(getString(R.string.Odometer));
+                builder2.setMessage(getString(R.string.OdometerInfo));
+                builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
+            }
+
             public void temp(){
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
-                builder2.setTitle("Car Temperature");
-                builder2.setMessage("This function is used to control the temperature in front and back of car. Adjust slider to desired temperature");
+                builder2.setTitle(getString(R.string.CarTemp));
+                builder2.setMessage(getString(R.string.CarTempInfo));
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -104,8 +171,8 @@ public class CarList extends Fragment implements View.OnClickListener {
 
             public void fuel(){
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
-                builder2.setTitle("Fuel Guage");
-                builder2.setMessage("This function displays fuel level and distance you are able to travel with remaining fuel");
+                builder2.setTitle(getString(R.string.FuelGuage));
+                builder2.setMessage(getString(R.string.FuelGuageInfo));
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -116,8 +183,8 @@ public class CarList extends Fragment implements View.OnClickListener {
 
             public void drive(){
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
-                builder2.setTitle("Drive");
-                builder2.setMessage("This function replicates driving the car the distance entered. It keeps a log of all entries and will display a warning if distance entered is farther then you can drive with remaining fuel");
+                builder2.setTitle(getString(R.string.Drive));
+                builder2.setMessage(getString(R.string.DriveInfo));
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -129,7 +196,7 @@ public class CarList extends Fragment implements View.OnClickListener {
             public void radio(){
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
                 builder2.setTitle("Radio");
-                builder2.setMessage("This function allows you to set the tuner and adjust volume. It also has presets which are programmable with a long click");
+                builder2.setMessage(getString(R.string.RadioInfo));
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -141,7 +208,7 @@ public class CarList extends Fragment implements View.OnClickListener {
             public void gps(){
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
                 builder2.setTitle("GPS");
-                builder2.setMessage("This function launches Google Navigation");
+                builder2.setMessage(getString(R.string.GPSInfo));
                 builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                     }
@@ -164,13 +231,19 @@ public class CarList extends Fragment implements View.OnClickListener {
                     break;
                     case 3: gps();
                     break;
-                    case 6: drive();
+                    case 4: drive();
+                    break;
+                    case 5: odometer();
                     break;
                 }
             }
 
             public void temp(){
                 Intent intent = new Intent (getActivity(),Temp.class);
+                ((Automobile)getActivity()).startActivity(intent);
+            }
+            public void odometer(){
+                Intent intent = new Intent (getActivity(),Odometer.class);
                 ((Automobile)getActivity()).startActivity(intent);
             }
 
@@ -191,7 +264,7 @@ public class CarList extends Fragment implements View.OnClickListener {
 
             public void gps(){
                 new Navigation().execute();
-                Snackbar snackbar = Snackbar.make(getView(), "Navigation Loading", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(getView(), getString(R.string.Navigation), Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
         });
@@ -207,8 +280,8 @@ public class CarList extends Fragment implements View.OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
-        builder2.setTitle("Help Menu");
-        builder2.setMessage("Author: Ron Zimabalatti\n\nVersion: 1.0\n\nInstructions:\n\nEach Item on the list is a function you can use to access controls\n\nA long click on the item will display instructions\n\na short click will access the controls ");
+        builder2.setTitle(getString(R.string.HelpMenu));
+        builder2.setMessage(getString(R.string.HelpMenuInfo));
         builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             }
@@ -220,13 +293,7 @@ public class CarList extends Fragment implements View.OnClickListener {
         return true;
     }
 
-    @Override
-    public void onClick(View v) {
 
-                addText = (TextView)getActivity().findViewById(R.id.editTextList);
-                list.add(addText.getText().toString());
-
-    }
 
     public class Navigation extends AsyncTask{
 

@@ -14,13 +14,24 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/**
+ * this class represents athe tempurate settings for the car
+ * @author ron zimbalatti
+ * @date dec 1 2016
+ */
 public class Temp extends AppCompatActivity {
-
+    /**
+     * this Overridden method contains the logic of the activity to set the temp of either
+     * the back or the front using sliers and storing and displaying the value
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
-
+        /**
+        * Shared preferences used to store the value of the seekbars
+        */
         final SharedPreferences sharedPreferences2 = getApplicationContext().getSharedPreferences("progress2", Context.MODE_PRIVATE);
         final SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("progress", Context.MODE_PRIVATE);
 
@@ -87,8 +98,8 @@ public class Temp extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-        builder2.setTitle("Car Temperature");
-        builder2.setMessage("This function is used to control the temperature in front and back of car. Adjust slider to desired temperature");
+        builder2.setTitle(getString(R.string.CarTemp));
+        builder2.setMessage(getString(R.string.CarTempInfo));
         builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             }
