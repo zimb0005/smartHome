@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ron.smartHome.Radio">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/buttonPreset1"
+        android:layout_above="@+id/buttonPreset4"
+        android:layout_toStartOf="@+id/textViewVolume" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/buttonPreset2"
+        android:layout_above="@+id/buttonPreset5"
+        android:layout_alignEnd="@+id/textViewRadioVolume"
+        android:layout_toEndOf="@+id/buttonPreset1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/buttonPreset3"
+        android:layout_above="@+id/buttonPreset5"
+        android:layout_alignEnd="@+id/buttonPreset5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/buttonPreset4"
+        android:layout_below="@+id/buttonPreset2"
+        android:layout_toEndOf="@+id/buttonPreset1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/buttonPreset5"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/buttonPreset2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:id="@+id/buttonPreset6"
+        android:layout_below="@+id/buttonPreset1"
+        android:layout_alignStart="@+id/buttonPreset1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Volume"
+        android:id="@+id/textViewVolume"
+        android:layout_below="@+id/buttonPreset5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/buttonVolUp"
+        android:layout_alignBottom="@+id/textViewRadioVolume"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/buttonVolDown"
+        android:layout_below="@+id/buttonVolUp"
+        android:layout_alignStart="@+id/buttonVolUp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:id="@+id/textViewRadioVolume"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/textViewVolume"
+        android:layout_alignEnd="@+id/buttonPreset4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="100.1"
+        android:id="@+id/textViewTuner"
+        android:layout_above="@+id/buttonPreset1"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&lt;"
+        android:id="@+id/buttonTunerLess"
+        android:layout_above="@+id/buttonPreset1"
+        android:layout_toStartOf="@+id/textViewTuner" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">"
+        android:id="@+id/buttonTuneMore"
+        android:layout_above="@+id/buttonPreset3"
+        android:layout_toEndOf="@+id/textViewTuner" />
+
+    <ImageView
+        android:src="@mipmap/ic_radio"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:scaleType="center"
+        android:background="#FFFFBB33"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
