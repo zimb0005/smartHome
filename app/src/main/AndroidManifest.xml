@@ -22,7 +22,9 @@
         <activity android:name=".Radio" />
         <activity android:name=".GPS" />
         <activity android:name=".Fuel" />
-        <activity android:name=".Temp"></activity>
+        <activity android:name=".Temp" />
+        <activity android:name=".Odometer" />
+        <activity android:name=".OdometerDataBaseHelper"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Go_Button">Allez!</string>
+    <string name="EnterKm">Entrez Km à Drive</string>
+    <string name="DriveLog">Journal des lecteurs</string>
+    <string name="Fill">Remplir</string>
+    <string name="FuelWarning">ous n\'avez pas assez de gaz pour conduire jusqu\'ici!</string>
+    <string name="Empty">Vide</string>
+    <string name="Add">Ajouter</string>
+    <string name="Remove">Retirer</string>
+    <string name="Odometer">odomètre</string>
+    <string name="NumberWarning">Entre une numero ci vous plait</string>
+    <string name="OdometerInfo">Mises à jour pour chaque kilomètre</string>
+    <string name="Full">Plein</string>
+    <string name="YouCanDrive">Tu peux conduire</string>
+    <string name="Volume">Le Volume</string>
+    <string name="Front">Avant</string>
+    <string name="HelpMenuInfo">Auteur: Ron Zimabalatti\n\nVersion: 1.0\n\nInstructions:\n\nChaque élément de la liste est une fonction que vous pouvez utiliser pour accéder aux contrôles\nUn long clic sur l\'élément affichera les instructions\nUn court clic permet d\'accéder aux contrôles</string>
+    <string name="Back">Derriere</string>
+    <string name="Drive">Conduire</string>
+    <string name="HelpMenu">Menu D\'Aide</string>
+    <string name="Navigation">Navigation Chargement</string>
+    <string name="GPSInfo">Cette fonction lance Google Navigation</string>
+    <string name="CarTemp">Température de la voiture</string>
+    <string name="CarTempInfo">Cette fonction est utilisée pour contrôler la température à l\'avant et à l\'arrière de la voiture. Ajustez le curseur à la température désirée</string>
+    <string name="FuelGuage">Jauge de carburant</string>
+    <string name="FuelGuageInfo">Cette fonction affiche le niveau de carburant et la distance que vous pouvez parcourir avec le carburant restant</string>
+    <string name="DriveInfo">Cette fonction réplique la conduite de la voiture la distance entrée. Il conserve un journal de toutes les entrées et affiche un avertissement si la distance entrée est plus loin que vous pouvez conduire avec le carburant restant</string>
+    <string name="RadioInfo">Cette fonction vous permet de régler le tuner et de régler le volume. Il dispose également de presets qui sont programmables avec un clic long</string>
 </resources>

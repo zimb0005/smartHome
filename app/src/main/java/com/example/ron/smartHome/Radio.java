@@ -1,9 +1,13 @@
 package com.example.ron.smartHome;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.icu.text.DecimalFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,16 +15,41 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+/**
+ * This class represents the radio in the car you can set the tuner and 6 presets as well as adjust the volume
+ * @author ron zimbalatti
+ * @date dec 1 2016
+ */
 public class Radio extends AppCompatActivity {
-
+    /**
+     * int representing the volume
+     */
     int volumeInt;
+    /**
+     * string representing the volume
+     */
     String volumeString;
+    /**
+     * text representing the volume
+     */
     TextView volumeText;
+    /**
+     * double representing the tuner
+     */
     Double tunerDouble;
+    /**
+     * string representing the tuner
+     */
     String tunerString;
+    /**
+     * text representing the tuner
+     */
     TextView tunerText;
 
-
+    /**
+     * Overidden method to store all the data in shared preferences and listen for buttons and initiate the proper action
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -221,5 +250,25 @@ public class Radio extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.car_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Radio");
+        builder2.setMessage(getString(R.string.RadioInfo));
+        builder2.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+        AlertDialog dialog2 = builder2.create();
+        dialog2.show();
+        return super.onOptionsItemSelected(item);
     }
 }

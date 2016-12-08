@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go!"
+        android:text="@string/Go_Button"
         android:id="@+id/buttonGo"
         android:layout_below="@+id/editTextDrive"
         android:layout_alignEnd="@+id/editTextDrive" />
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Km to Drive"
+        android:text="@string/EnterKm"
         android:id="@+id/textViewDriveAmount"
         android:layout_marginTop="100dp" /> />
     <ImageView
@@ -54,9 +54,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Drive Log"
         android:id="@+id/textView"
         android:layout_alignBottom="@+id/buttonGo"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="@string/DriveLog" />
 
 </RelativeLayout>

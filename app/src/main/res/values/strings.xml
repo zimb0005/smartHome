@@ -10,5 +10,30 @@
     <string name="title_activity_fuel_guage">FuelGuage</string>
     <string name="title_activity_gps">GPS</string>
     <string name="Go_Button">Go!</string>
-
+    <string name="EnterKm">Enter Km to Drive</string>
+    <string name="DriveLog">Drive Log</string>
+    <string name="OdometerInfo">Updates for every km driven</string>
+    <string name="Odometer">Odometer</string>
+    <string name="Fill">Fill</string>
+    <string name="Empty">Empty</string>
+    <string name="Remove">Remove</string>
+    <string name="NumberWarning">You must enter a number</string>
+    <string name="Add">Add</string>
+    <string name="Full">Full</string>
+    <string name="YouCanDrive">You Can Drive</string>
+    <string name="FuelWarning">You do not have enough fuel to drive this far!</string>
+    <string name="Volume">Volume</string>
+    <string name="Front">Front</string>
+    <string name="HelpMenu">Help Menu</string>
+    <string name="HelpMenuInfo">Author: Ron Zimabalatti\n\nVersion: 1.0\n\nInstructions:\n\nEach Item on the list is a function you can use to access controls\nA long click on the item will display instructions\na short click will access the controls </string>
+    <string name="Back">Back</string>
+    <string name="Navigation">Navigation Loading</string>
+    <string name="Drive">Drive</string>
+    <string name="CarTemp">Car Temperature</string>
+    <string name="GPSInfo">This function launches Google Navigation</string>
+    <string name="CarTempInfo">This function is used to control the temperature in front and back of car. Adjust slider to desired temperature</string>
+    <string name="FuelGuage">Fuel Guage</string>
+    <string name="FuelGuageInfo">This function displays fuel level and distance you are able to travel with remaining fuel</string>
+    <string name="DriveInfo">This function replicates driving the car the distance entered. It keeps a log of all entries and will display a warning if distance entered is farther then you can drive with remaining fuel</string>
+    <string name="RadioInfo">This function allows you to set the tuner and adjust volume. It also has presets which are programmable with a long click</string>
 </resources>
