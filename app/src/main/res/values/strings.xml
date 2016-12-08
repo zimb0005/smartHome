@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">smartHome</string>
+    <string name="auto">Auto</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="livingRoom">Living Room</string>
+    <string name="house">House Settings</string>
+    <string name="title_activity_light">light</string>
+    <string name="title_activity_database">database</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/auto"
+        android:title="@string/auto"
+        android:orderInCategory="100"
+        android:icon="@mipmap/ic_car"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/kitchen"
+        android:title="@string/kitchen"
+        android:icon="@mipmap/ic_kitchen"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/livingRoom"
+        android:title="@string/livingRoom"
+        android:orderInCategory="100"
+        android:icon="@mipmap/ic_living_room"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/houseSettings"
+        android:title="@string/house"
+        android:icon="@mipmap/ic_house"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
