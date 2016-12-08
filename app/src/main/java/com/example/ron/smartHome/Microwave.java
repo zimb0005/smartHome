@@ -78,7 +78,7 @@ public class Microwave extends AppCompatActivity {
                         Log.d(ACTIVITY_NAME, e.getMessage());
                     }
                     Log.i(ACTIVITY_NAME," microwave is off, turning it on");
-
+//hi
                 }
                 else{
                     Log.i(ACTIVITY_NAME," microwave is on, turning it off");
