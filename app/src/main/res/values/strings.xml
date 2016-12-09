@@ -4,5 +4,10 @@
     <string name="kitchen">Kitchen</string>
     <string name="livingRoom">Living Room</string>
     <string name="house">House Settings</string>
+    <string name="garage">Garage Settings</string>
+    <string name="inDoor">House temperature Settings</string>
+    <string name="outDoor">Outside weather Settings</string>
+    <string name="title_control_list">Items</string>
+    <string name="title_control_detail">Control Detail</string>
 
 </resources>

@@ -2,22 +2,43 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ron.smartHome">
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.ron.smartHome.LivingRoom">
+        <activity android:name=".LivingRoom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.ron.smartHome.Kitchen" />
-        <activity android:name="com.example.ron.smartHome.HouseSettings" />
-        <activity android:name="com.example.ron.smartHome.Automobile" />
+        <activity android:name=".Kitchen" />
+        <activity android:name=".HouseSettings" />
+        <activity android:name=".Automobile" />
+        <activity
+            android:name="com.example.ron.cst2335_group_project.ControlListActivity"
+            android:label="@string/title_control_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.ron.cst2335_group_project.ControlDetailActivity"
+            android:label="@string/title_control_detail"
+            android:parentActivityName="com.example.ron.cst2335_group_project.ControlListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ron.cst2335_group_project.ControlListActivity" />
+        </activity>
+        <activity android:name=".Garage" />
+        <activity android:name=".OutsideWeather" />
+        <activity android:name=".TempHouse"></activity>
     </application>
 
 </manifest>
